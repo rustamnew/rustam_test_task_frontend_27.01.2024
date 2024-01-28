@@ -1,47 +1,31 @@
 <script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
+import SearchForm from './components/SearchForm.vue'
+import SearchResults from './components/SearchResults.vue'
+import ThemeSwitcher from './components/ThemeSwitcher.vue';
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
+    <div class="flex flex-col w-full h-full items-center">
+        <header class="border-b py-5 flex flex-col items-center mb-10 w-full bg-white">
+            <h1 class="text-lg mb-4">Поиск репозиториев</h1>
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+            <SearchForm />
+        </header>
+
+        <main class="h-full w-full ">
+            <SearchResults />
+        </main>
     </div>
-  </header>
 
-  <main>
-    <TheWelcome />
-  </main>
+    <ThemeSwitcher />
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
+<style>
+html.dark {
+    color-scheme: dark;
 }
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
+html, body, #app {
+    height: 100%;
 }
 </style>
+
